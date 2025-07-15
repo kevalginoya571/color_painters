@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay Shree Ram Color Contract</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(90deg, #f39c12, #e74c3c);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .services {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #e67e22;
+    }
+
+    .services ul {
+      list-style: none;
+      font-size: 1.2em;
+    }
+
+    .services li {
+      margin: 10px 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gallery {
+      padding: 40px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .gallery h2 {
+      margin-bottom: 20px;
+      color: #2980b9;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    .slider img {
+      width: 100%;
+      max-width: 300px;
+      height: 200px;
+      object-fit: cover;
+      scroll-snap-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .slider img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fullview {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fullview img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jay Shree Ram Color Contract</h1>
+  </header>
+
+  <section class="services">
+    <h2>Our Work</h2>
+    <ul>
+      <li>All Type Color Work</li>
+      <li>Polish Work</li>
+      <li>POP Work</li>
+    </ul>
+  </section>
+
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="slider">
+      <img src="https://via.placeholder.com/300x200?text=Work+1" alt="Work 1" />
+      <img src="https://via.placeholder.com/300x200?text=Work+2" alt="Work 2" />
+      <img src="https://via.placeholder.com/300x200?text=Work+3" alt="Work 3" />
+      <img src="https://via.placeholder.com/300x200?text=Work+4" alt="Work 4" />
+      <img src="https://via.placeholder.com/300x200?text=Work+5" alt="Work 5" />
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact: +91 6263 790 904</p>
+    <p>&copy; 2025 Jay Shree Ram Color Contract</p>
+  </footer>
+
+  <div class="fullview" id="fullView">
+    <img id="fullImage" src="" alt="Full view" />
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.slider img');
+    const fullView = document.getElementById('fullView');
+    const fullImage = document.getElementById('fullImage');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImage.src = img.src;
+        fullView.style.display = 'flex';
+      });
+    });
+
+    fullView.addEventListener('click', () => {
+      fullView.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
